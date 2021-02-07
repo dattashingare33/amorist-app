@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="slider-container">
+  <div *ngFor="let shayari of shayaris; let i = index" [ngClass]="i === 0 ? 'active': '' "
+       [style.background]="'url('+ shayari.imgUrl +')'" class="slide">
+    <div class="text-container position-{{shayari.position}}">
+      <!--      <div class="title">Amorist...</div>-->
+      <div class="text-content text-{{shayari.textColor}}">
+        <div [innerHTML]="shayari.caption" class="caption"></div>
+        <div [innerHTML]="shayari.text" class="text">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="arrow left-arrow" id="left"><i class="fas fa-chevron-left"></i></button>
+  <button class="arrow right-arrow" id="right"><i class="fas fa-chevron-right"></i></button>
+</div>
